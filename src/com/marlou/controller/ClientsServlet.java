@@ -30,10 +30,10 @@ import com.huios.service.IServiceLocal;
  *
  * @author Étienne, Sophia et Maria */
 
-public class ClientsServlet extends HttpServlet {
+public class ClientsServlet extends MereServlet {
 
   private static final long serialVersionUID = -1697049406597216786L;
-
+  	
 
 	public ClientsServlet() {
 		// TODO Auto-generated constructor stub
@@ -44,12 +44,12 @@ public class ClientsServlet extends HttpServlet {
 	 response)
 			 throws ServletException, IOException {
 //	 // TODO Auto-generated method stub
-//	
-//	 request.setAttribute("liste", service.getTousLesClients());
-//	 request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request,
-//	 response);
-//	
-//	
+	
+	 request.setAttribute("liste", service.getTousLesClients());
+	 request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request,
+	 response);
+	
+	
 	 }
 	
 		

@@ -29,27 +29,25 @@ import com.huios.service.IServiceLocal;
  *
  * @author Étienne, Sophia et Maria */
 @WebServlet("/ComptesServlet")
-public class ComptesServlet extends HttpServlet {
+public class ComptesServlet extends MereServlet {
 
-//  private static final long serialVersionUID = -4042961988530486177L;
-//
-//  @Inject
-//  private IServiceLocal service;
-//
-//  
-//  @Override
-//  protected void doGet(HttpServletRequest request, HttpServletResponse response)
-//      throws ServletException, IOException {
-//    response.setContentType("text/html");
-//    response.setCharacterEncoding("UTF-8");
-//
-//   
-//    int idClient = Integer.parseInt(request.getParameter("idClient"));
-//
-//    request.setAttribute("liste", service.getComptes(idClient));
-//	request.getRequestDispatcher("/WEB-INF/comptes_client.jsp").forward(request, response);
-//
-//  }
+  private static final long serialVersionUID = -4042961988530486177L;
+  
+
+  
+  @Override
+  protected void doGet(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+    response.setContentType("text/html");
+    response.setCharacterEncoding("UTF-8");
+
+   
+    int idClient = Integer.parseInt(request.getParameter("idClient"));
+
+    request.setAttribute("liste", service.getComptes(idClient));
+	request.getRequestDispatcher("/WEB-INF/comptes_client.jsp").forward(request, response);
+
+  }
 
 
 
