@@ -44,20 +44,12 @@ public class ClientsServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	  
-	  try {
-		  request.setAttribute("liste", service.getTousLesClients());
+
+		  	request.setAttribute("liste", service.getTousLesClients());
 			request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request, response);
 	     
-	    } catch (ClientOADException e) {
-	      request.setAttribute("erreur", e.getMessage());
-	      request.getRequestDispatcher("/WEB-INF/erreur.jsp").include(request,
-	          response);
-	      return;
+
 	    }	
 	  
 		
 	}
-
- 
-
-}
