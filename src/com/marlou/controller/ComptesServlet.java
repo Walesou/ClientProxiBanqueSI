@@ -5,13 +5,17 @@ package com.marlou.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.marlou.dao.CompteOADException;
 import com.marlou.service.ConseillerServiceException;
+import com.marlou.service.IServiceLocal;
 import com.marlou.webservice.WebService;
 
 
@@ -25,10 +29,13 @@ import com.marlou.webservice.WebService;
  * clients du conseiller connecté.
  *
  * @author Étienne, Sophia et Maria */
+@WebServlet("/ComptesServlet")
 public class ComptesServlet extends HttpServlet {
 
   private static final long serialVersionUID = -4042961988530486177L;
 
+  @Inject
+  private IServiceLocal service;
 
   
   @Override
@@ -37,14 +44,14 @@ public class ComptesServlet extends HttpServlet {
     response.setContentType("text/html");
     response.setCharacterEncoding("UTF-8");
 
-    WebService webService = new WebService();
+   
     int idClient = Integer.parseInt(request.getParameter("idClient"));
 
     try {
-    	request.setAttribute("liste", webService.getComptes(idClient));
+    	request.setAttribute("liste", service.getComptes(idClient));
     	request.getRequestDispatcher("/WEB-INF/comptes_client.jsp").forward(request, response);
     	
-    } catch (ConseillerServiceException | CompteOADException e) {
+    } catch (ConseillerServiceException e) {
       request.setAttribute("erreur", e.getMessage());
       request.getRequestDispatcher("/WEB-INF/erreur.jsp").include(request,
           response);

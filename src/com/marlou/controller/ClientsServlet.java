@@ -2,15 +2,18 @@ package com.marlou.controller;
 
 import java.io.IOException;
 
-
+import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.marlou.dao.ClientOADException;
 import com.marlou.service.ConseillerServiceException;
+import com.marlou.service.IServiceLocal;
 import com.marlou.webservice.WebService;
 
 
@@ -27,23 +30,25 @@ import com.marlou.webservice.WebService;
  * ({@link eu.fstk.ProxiBanqueSI.presentation.VirementServlet}).
  *
  * @author Étienne, Sophia et Maria */
+@WebServlet("/ClientsServlet")
 public class ClientsServlet extends HttpServlet {
 
   private static final long serialVersionUID = -1697049406597216786L;
 
-
+  @Inject
+  private IServiceLocal service;
 
   
   @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	  WebService webService = new WebService();
+	  
 	  try {
-		  request.setAttribute("liste", webService.getTousLesClients());
+		  request.setAttribute("liste", service.getTousLesClients());
 			request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request, response);
 	     
-	    } catch (ConseillerServiceException | ClientOADException e) {
+	    } catch (ClientOADException e) {
 	      request.setAttribute("erreur", e.getMessage());
 	      request.getRequestDispatcher("/WEB-INF/erreur.jsp").include(request,
 	          response);
