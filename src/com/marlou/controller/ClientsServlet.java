@@ -11,10 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.marlou.dao.ClientOADException;
-import com.marlou.service.ConseillerServiceException;
-import com.marlou.service.IServiceLocal;
-import com.marlou.webservice.WebService;
+import com.huios.service.IServiceLocal;
+
+
 
 
 
@@ -30,26 +29,28 @@ import com.marlou.webservice.WebService;
  * ({@link eu.fstk.ProxiBanqueSI.presentation.VirementServlet}).
  *
  * @author Étienne, Sophia et Maria */
-@WebServlet("/ClientsServlet")
+
 public class ClientsServlet extends HttpServlet {
 
   private static final long serialVersionUID = -1697049406597216786L;
 
-  @Inject
-  private IServiceLocal service;
 
-  
-  @Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	  
-
-		  	request.setAttribute("liste", service.getTousLesClients());
-			request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request, response);
-	     
-
-	    }	
-	  
+	public ClientsServlet() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	 @Override
+	 protected void doGet(HttpServletRequest request, HttpServletResponse
+	 response)
+			 throws ServletException, IOException {
+//	 // TODO Auto-generated method stub
+//	
+//	 request.setAttribute("liste", service.getTousLesClients());
+//	 request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request,
+//	 response);
+//	
+//	
+	 }
+	
 		
 	}

@@ -13,10 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.marlou.dao.CompteOADException;
-import com.marlou.service.ConseillerServiceException;
-import com.marlou.service.IServiceLocal;
-import com.marlou.webservice.WebService;
+import com.huios.service.ConseillerServiceException;
+import com.huios.service.IServiceLocal;
+
 
 
 
@@ -32,34 +31,25 @@ import com.marlou.webservice.WebService;
 @WebServlet("/ComptesServlet")
 public class ComptesServlet extends HttpServlet {
 
-  private static final long serialVersionUID = -4042961988530486177L;
-
-  @Inject
-  private IServiceLocal service;
-
-  
-  @Override
-  protected void doGet(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
-    response.setContentType("text/html");
-    response.setCharacterEncoding("UTF-8");
-
-   
-    int idClient = Integer.parseInt(request.getParameter("idClient"));
-
-    try {
-    	request.setAttribute("liste", service.getComptes(idClient));
-    	request.getRequestDispatcher("/WEB-INF/comptes_client.jsp").forward(request, response);
-    	
-    } catch (ConseillerServiceException e) {
-      request.setAttribute("erreur", e.getMessage());
-      request.getRequestDispatcher("/WEB-INF/erreur.jsp").include(request,
-          response);
-      return;
-    }
-
-
-  }
+//  private static final long serialVersionUID = -4042961988530486177L;
+//
+//  @Inject
+//  private IServiceLocal service;
+//
+//  
+//  @Override
+//  protected void doGet(HttpServletRequest request, HttpServletResponse response)
+//      throws ServletException, IOException {
+//    response.setContentType("text/html");
+//    response.setCharacterEncoding("UTF-8");
+//
+//   
+//    int idClient = Integer.parseInt(request.getParameter("idClient"));
+//
+//    request.setAttribute("liste", service.getComptes(idClient));
+//	request.getRequestDispatcher("/WEB-INF/comptes_client.jsp").forward(request, response);
+//
+//  }
 
 
 
