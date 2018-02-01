@@ -2,24 +2,18 @@ package com.marlou.controller;
 
 import java.io.IOException;
 
-import javax.ejb.EJB;
 import javax.inject.Inject;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.marlou.dao.ClientOADException;
-import com.marlou.service.ConseillerServiceException;
-import com.marlou.service.IServiceLocal;
-import com.marlou.webservice.WebService;
+import com.huios.service.IServiceLocal;
 
-
-
-/** Page gérant l’affichage de la liste des clients du conseiller. C’est la page
- * d’accueil de l’espace du conseiller.
+/**
+ * Page gérant l’affichage de la liste des clients du conseiller. C’est la
+ * page d’accueil de l’espace du conseiller.
  *
  * Chaque conseiller peut visualiser l'ensemble de ses clients. Pour chaque
  * client, l'interface lui permet de mettre à jour les informations du client
@@ -29,27 +23,24 @@ import com.marlou.webservice.WebService;
  * d'effectuer un virement
  * ({@link eu.fstk.ProxiBanqueSI.presentation.VirementServlet}).
  *
- * @author Étienne, Sophia et Maria */
+ * @author Étienne, Sophia et Maria
+ */
 @WebServlet("/ClientsServlet")
 public class ClientsServlet extends HttpServlet {
 
-  private static final long serialVersionUID = -1697049406597216786L;
+	private static final long serialVersionUID = -1697049406597216786L;
 
-  @Inject
-  private IServiceLocal service;
+	@Inject
+	private IServiceLocal service;
 
-  
-  @Override
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	  
 
-		  	request.setAttribute("liste", service.getTousLesClients());
-			request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request, response);
-	     
+		request.setAttribute("liste", service.getTousLesClients());
+		request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request, response);
 
-	    }	
-	  
-		
 	}
+
+}
