@@ -13,13 +13,12 @@ import javax.servlet.http.HttpServletResponse;
  * Pour chaque client, le conseiller peut voir la liste des comptes
  * disponibles : épargne ou courant.
  *
- * On a fait le choix de n’accéder facilement qu’à l’affichage des
- * comptes des clients du conseiller connecté.
+ * On a fait le choix de n’accéder facilement qu’à l’affichage des comptes des
+ * clients du conseiller connecté.
  *
  * @author Étienne, Sophia et Maria
  */
 @WebServlet("/ComptesServlet")
-
 public class ComptesServlet extends MereServlet {
 
 	private static final long serialVersionUID = -4042961988530486177L;
@@ -27,13 +26,13 @@ public class ComptesServlet extends MereServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		response.setContentType("text/html");
-//		response.setCharacterEncoding("UTF-8");
-//
-//		int idClient = Integer.parseInt(request.getParameter("idClient"));
-//
-//		request.setAttribute("liste", service.getComptes(idClient));
-//		request.getRequestDispatcher("/WEB-INF/comptes_client.jsp").forward(request, response);
+		response.setContentType("text/html");
+		response.setCharacterEncoding("UTF-8");
+
+		int idClient = Integer.parseInt(request.getParameter("idClient"));
+
+		request.setAttribute("listComptes", service.getComptes(idClient));
+		request.getRequestDispatcher("/WEB-INF/comptes_client.jsp").forward(request, response);
 
 	}
 

@@ -3,6 +3,7 @@ package com.marlou.controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Étienne, Sophia et Maria
  */
+@WebServlet("/DeconnexionServlet")
 public class DeconnexionServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -3239495810626390996L;
@@ -31,7 +33,8 @@ public class DeconnexionServlet extends HttpServlet {
 		 * session.invalidate(); }
 		 */
 
-		response.sendRedirect(request.getContextPath() + "/gestion/");
+		// response.sendRedirect(request.getContextPath() + "index.jsp");
+		request.getRequestDispatcher("index.jsp").include(request, response);
 
 	}
 

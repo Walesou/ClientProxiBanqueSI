@@ -31,9 +31,6 @@
             <li class="nav-item">
               <a class="nav-link" href="support.jsp">Support</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="connexion.jsp">Mon espace</a>
-            </li>
           </ul>
         </nav>
         <h3 class="text-muted">Proxi<img src="favicon.ico" alt="B"/>anque</h3>

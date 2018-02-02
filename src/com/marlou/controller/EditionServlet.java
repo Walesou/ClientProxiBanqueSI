@@ -3,6 +3,7 @@ package com.marlou.controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -20,6 +21,7 @@ import com.huios.domaine.Client;
  *
  * @author Étienne, Sophia et Maria
  */
+@WebServlet("/EditionServlet")
 public class EditionServlet extends MereServlet {
 
 	private static final long serialVersionUID = -5266516954070088318L;
@@ -60,7 +62,7 @@ public class EditionServlet extends MereServlet {
 		}
 		try {
 			service.majClient(client);
-			response.sendRedirect("modifier_client.jsp");
+			request.getRequestDispatcher("/WEB-INF/client_modifie.jsp").include(request, response);
 
 		} catch (ClientOADException e) {
 			request.setAttribute("erreur", e.getMessage());

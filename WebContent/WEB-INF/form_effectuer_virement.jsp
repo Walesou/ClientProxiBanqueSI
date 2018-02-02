@@ -22,16 +22,13 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="${pageContext.request.contextPath}/gestion/index.jsp">Tableau de bord</a>
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp">Tableau de bord</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="${pageContext.request.contextPath}/gestion/index.jsp">Accueil</a>
-            </li>
+          <ul class="navbar-nav mr-auto">            
             <li class="nav-item">
               <a class="nav-link" href="${pageContext.request.contextPath}/support.jsp">Support</a>
             </li>
@@ -45,19 +42,19 @@
         <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="mes_clients.jsp">Aperçu</a>
+              <a class="nav-link" href="ClientsServlet">Aperçu</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="modifier_client.jsp">Modifier un client</a>
+              <a class="nav-link" href="MajClient">Modifier un client</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="effectuer_virement.jsp">Effectuer un virement <span class="sr-only">(current)</span></a>
+              <a class="nav-link active" href="VirementServlet">Effectuer un virement <span class="sr-only">(current)</span></a>
             </li>
           </ul>
 
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="deconnexion.jsp">Déconnexion</a>
+              <a class="nav-link" href="DeconnexionServlet">Déconnexion</a>
             </li>
           </ul>
         </nav>

@@ -35,8 +35,6 @@ public class VirementServlet extends MereServlet {
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 
-		// List<Compte> comptes = service.
-
 		List<Client> clients = service.getTousLesClients();
 		for (Client client : clients) {
 			client.setComptes(service.getComptesByID(client.getIdentifiant()));

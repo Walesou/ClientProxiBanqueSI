@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="${pageContext.request.contextPath}/favicon.ico">
 
-    <title>Client — Tableau de bord — ProxiBanque</title>
+    <title>Virement — Tableau de bord — ProxiBanque</title>
 
     <!-- Bootstrap core CSS -->
     <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
@@ -45,10 +45,10 @@
               <a class="nav-link" href="ClientsServlet">Aperçu</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="MajClient">Modifier un client <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="MajClient">Modifier un client</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="VirementServlet">Effectuer un virement</a>
+              <a class="nav-link active" href="VirementServlet">Effectuer un virement <span class="sr-only">(current)</span></a>
             </li>
           </ul>
 
@@ -61,35 +61,14 @@
 
         <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
           <h1>Tableau de bord</h1>
-          <h2>Gestion clients</h2>
+          <h2>Modifications des données client</h2>
 
-          <h3>Modifier un client de la banque<</h3>
-          <form method="post" action="EditionServlet">
-            <div class="form-group">
-              <label>Liste des clients</label>
-              <select class="form-control" id="exampleFormControlSelect1" name="id">
-              	<c:forEach var="client" items="${requestScope.clients}" >
-                    <option value="${client.identifiant}">${client.identifiant} — ${client.prenom} ${client.nom} — ${client.adresse} — ${client.courriel}</option>
-               	</c:forEach>
-              </select><br />
-              <label>Champ à modifier</label>
-              <select class="form-control" id="exampleFormControlSelect2" name="modification">
-              	<option value="nom">Nom</option>
-              	<option value="prenom">Prénom</option>
-              	<option value="courriel">Courriel</option>
-              	<option value="adresse">Adresse</option>
-              </select><br />
-              <label>Nouvelle valeur</label>
-              <input type="text" name="valeur" />
-            </div>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
-          </form>
-
+          <h3>Le client sélectionné a été modifié dans la base</h3>
           
-
         </main>
       </div>
     </div>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

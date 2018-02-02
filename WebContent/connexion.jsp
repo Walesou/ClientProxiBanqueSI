@@ -31,9 +31,6 @@
             <li class="nav-item">
               <a class="nav-link" href="${pageContext.request.contextPath}/support.jsp">Support</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="${pageContext.request.contextPath}/gestion/index.jsp">Mon espace <span class="sr-only">(current)</span></a>
-            </li>
           </ul>
         </nav>
         <h3 class="text-muted">Proxi<img src="${pageContext.request.contextPath}/favicon.ico" alt="B"/>anque</h3>

@@ -23,8 +23,14 @@ public class MajClientServlet extends MereServlet {
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 
+		// HttpSession session = request.getSession(true);
+		//
+		// List<Client> clients = (List<Client>) session.getAttribute("clients_modif");
+		//
+
 		// On récupère les clients du conseiller.
-		request.setAttribute("mesClients", service.getClientsByConseillerAuthName(request.getUserPrincipal().getName()));
+		// request.setAttribute("mesClients",
+		// service.getClientsByConseillerAuthName(request.getUserPrincipal().getName()));
 		// On rÃ©cupÃ¨re tous les clients de la banque.
 		request.setAttribute("clients", service.getTousLesClients());
 		// On renvoie au formulaire dâ€™Ã©dition des clients.
