@@ -44,7 +44,7 @@
         <h5>L’authentification a échoué ; veuillez recommencer.</h5>
       </main>
 
-      <form method="post" class="form-signin" action="j_security_check">
+      <form method="post" class="form-signin" action="AuthentificationServlet">
         <h2 class="form-signin-heading">Connexion</h2>
         <label for="inputEmail" class="sr-only">Courriel</label>
         <input type="email" name="j_username" id="inputEmail" class="form-control" placeholder="Courriel" required autofocus>

@@ -43,7 +43,7 @@ public class AuthentificationServlet extends MereServlet {
 
 		try {
 			if (service.verifAuthentification(login, pass) != false) {
-
+				
 				session.setAttribute("clients", service.getClientsByConseillerAuthName(login));
 				request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request, response);
 				return;

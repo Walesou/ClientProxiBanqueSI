@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.huios.service.IServiceLocal;
 
@@ -40,8 +41,7 @@ public class ClientsServlet extends MereServlet {
 			throws ServletException, IOException {
 		// // TODO Auto-generated method stub
 
-//		request.setAttribute("liste", service.getTousLesClients());
-//		request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request, response);
 
 	}
 

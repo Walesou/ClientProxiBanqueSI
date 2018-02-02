@@ -88,7 +88,7 @@
                 </tr>
               </thead>
               <tbody>
-              	<c:forEach var="client" items="${requestScope.clients}" >
+              	<c:forEach var="client" items="${sessionScope.clients}" >
                   <tr class='clickable-row' data-href='<c:url value="Comptes?idClient=${client.identifiant}" />'>
                     <td>${client.identifiant}</td>
                     <td>${client.nom}</td>
