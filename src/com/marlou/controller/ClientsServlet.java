@@ -23,6 +23,8 @@ import com.huios.service.IServiceLocal;
  * d'effectuer un virement
  * ({@link eu.fstk.ProxiBanqueSI.presentation.VirementServlet}).
  *
+ * 
+ * 
  * @author Étienne, Sophia et Maria
  */
 @WebServlet("/ClientsServlet")
@@ -33,14 +35,20 @@ public class ClientsServlet extends HttpServlet {
 	@Inject
 	private IServiceLocal service;
 
+	public ClientsServlet() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
-		request.setAttribute("liste", service.getTousLesClients());
-		request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request, response);
-
+		// // TODO Auto-generated method stub
+		//
+		// request.setAttribute("liste", service.getTousLesClients());
+		// request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request,
+		// response);
+		//
+		//
 	}
 
 }
