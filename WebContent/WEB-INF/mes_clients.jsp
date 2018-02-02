@@ -30,7 +30,7 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="${pageContext.request.contextPath}/gestion/index.jsp">Accueil <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="mes_clients.jsp">Accueil <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="${pageContext.request.contextPath}/support.jsp">Support</a>
@@ -48,7 +48,7 @@
               <a class="nav-link active" href="mes_clients.jsp">Aperçu <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="modifier_client.jsp">Modifier un client</a>
+              <a class="nav-link" href="MajClientServlet">Modifier un client</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="effectuer_virement.jsp">Effectuer un virement</a>
@@ -56,7 +56,7 @@
           </ul>
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="deconnexion.jsp">Déconnexion</a>
+              <a class="nav-link" href="connexion.jsp">Déconnexion</a>
             </li>
           </ul>
         </nav>
