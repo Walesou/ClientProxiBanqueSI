@@ -2,14 +2,9 @@ package com.marlou.controller;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.huios.service.IServiceLocal;
 
 /**
  * Page gérant l’affichage de la liste des clients du conseiller. C’est la
@@ -24,16 +19,12 @@ import com.huios.service.IServiceLocal;
  * ({@link eu.fstk.ProxiBanqueSI.presentation.VirementServlet}).
  *
  * 
- * 
  * @author Étienne, Sophia et Maria
  */
-@WebServlet("/ClientsServlet")
-public class ClientsServlet extends HttpServlet {
+
+public class ClientsServlet extends MereServlet {
 
 	private static final long serialVersionUID = -1697049406597216786L;
-
-	@Inject
-	private IServiceLocal service;
 
 	public ClientsServlet() {
 		// TODO Auto-generated constructor stub
@@ -43,12 +34,10 @@ public class ClientsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// // TODO Auto-generated method stub
-		//
-		// request.setAttribute("liste", service.getTousLesClients());
-		// request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request,
-		// response);
-		//
-		//
+
+		request.setAttribute("liste", service.getTousLesClients());
+		request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request, response);
+
 	}
 
 }

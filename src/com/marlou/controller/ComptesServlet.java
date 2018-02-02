@@ -2,14 +2,10 @@ package com.marlou.controller;
 
 import java.io.IOException;
 
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.huios.service.IServiceLocal;
 
 /**
  * Page gérant l’affichage de la liste des comptes d’un client.
@@ -23,12 +19,10 @@ import com.huios.service.IServiceLocal;
  * @author Étienne, Sophia et Maria
  */
 @WebServlet("/ComptesServlet")
-public class ComptesServlet extends HttpServlet {
+
+public class ComptesServlet extends MereServlet {
 
 	private static final long serialVersionUID = -4042961988530486177L;
-
-	@Inject
-	private IServiceLocal service;
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -36,27 +30,10 @@ public class ComptesServlet extends HttpServlet {
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 
-		// private static final long serialVersionUID = -4042961988530486177L;
-		//
-		// @Inject
-		// private IServiceLocal service;
-		//
-		//
-		// @Override
-		// protected void doGet(HttpServletRequest request, HttpServletResponse
-		// response)
-		// throws ServletException, IOException {
-		// response.setContentType("text/html");
-		// response.setCharacterEncoding("UTF-8");
-		//
-		//
-		// int idClient = Integer.parseInt(request.getParameter("idClient"));
-		//
-		// request.setAttribute("liste", service.getComptes(idClient));
-		// request.getRequestDispatcher("/WEB-INF/comptes_client.jsp").forward(request,
-		// response);
-		//
-		// }
+		int idClient = Integer.parseInt(request.getParameter("idClient"));
+
+		request.setAttribute("liste", service.getComptes(idClient));
+		request.getRequestDispatcher("/WEB-INF/comptes_client.jsp").forward(request, response);
 
 	}
 
