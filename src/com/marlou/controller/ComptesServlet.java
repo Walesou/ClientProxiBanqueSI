@@ -27,13 +27,13 @@ public class ComptesServlet extends MereServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.setContentType("text/html");
-		response.setCharacterEncoding("UTF-8");
-
-		int idClient = Integer.parseInt(request.getParameter("idClient"));
-
-		request.setAttribute("liste", service.getComptes(idClient));
-		request.getRequestDispatcher("/WEB-INF/comptes_client.jsp").forward(request, response);
+//		response.setContentType("text/html");
+//		response.setCharacterEncoding("UTF-8");
+//
+//		int idClient = Integer.parseInt(request.getParameter("idClient"));
+//
+//		request.setAttribute("liste", service.getComptes(idClient));
+//		request.getRequestDispatcher("/WEB-INF/comptes_client.jsp").forward(request, response);
 
 	}
 
