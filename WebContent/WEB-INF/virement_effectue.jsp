@@ -84,15 +84,15 @@
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="exampleFormControlSelect1">Solde après le virement : ${requestScope.soldeCompteADebiterApres} €</label>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-group">
                   <label for="exampleFormControlSelect1">Solde initial : ${requestScope.soldeCompteACrediterAvant} €</label>
                 </div>
               </div>
+              
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Solde après le virement : ${requestScope.soldeCompteADebiterApres} €</label>
+                </div>
+              </div>    
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Solde après le virement : ${requestScope.soldeCompteACrediterApres} €</label>

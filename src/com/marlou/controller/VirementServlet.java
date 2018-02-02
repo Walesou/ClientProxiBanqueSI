@@ -39,7 +39,7 @@ public class VirementServlet extends MereServlet {
 
 		List<Client> clients = service.getTousLesClients();
 		for (Client client : clients) {
-			client.setComptes(service.getComptes(client.getIdentifiant()));
+			client.setComptes(service.getComptesByID(client.getIdentifiant()));
 		}
 
 		request.setAttribute("clients", clients);

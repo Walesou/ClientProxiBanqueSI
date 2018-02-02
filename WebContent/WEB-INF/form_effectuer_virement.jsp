@@ -66,8 +66,8 @@
           <h1>Tableau de bord</h1>
           <h2>Virement compte à compte</h2>
 
-          <h3>Virement depuis un de mes clients vers n’importe quel compte de la banque</h3>
-          <form method="post" action="<c:url value='ExecutionVirement' />">
+          <h3>Virement depuis un compte vers n’importe quel compte de la banque</h3>
+          <form method="post" action="MajVirement">
             <div class="form-row">
               <div class="col-md-6">
                 <div class="form-group">

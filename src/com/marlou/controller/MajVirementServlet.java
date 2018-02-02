@@ -3,16 +3,19 @@ package com.marlou.controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.huios.domaine.Compte;
+import com.huios.service.ConseillerServiceException;
 
 /**
  * Traitement de l’action de virement.
  *
  * @author Étienne, Sophia et Maria
  */
+@WebServlet("/MajVirement")
 public class MajVirementServlet extends MereServlet {
 
 	private static final long serialVersionUID = -3018151515164084048L;
@@ -33,28 +36,19 @@ public class MajVirementServlet extends MereServlet {
 
 		Compte compteADebiter = null;
 		Compte compteACrediter = null;
-		// try {
-		// compteADebiter = conseillerService.getCompteById(numeroCompteADebiter);
-		// compteACrediter = conseillerService.getCompteById(numeroCompteACrediter);
-		// } catch (ConseillerServiceException e) {
-		// request.setAttribute("erreur", e.getMessage());
-		// request.getRequestDispatcher("/WEB-INF/erreur.jsp").include(request,
-		// response);
-		// return;
-		// }
+		compteADebiter = service.getCompteById(numeroCompteADebiter);
+		compteACrediter = service.getCompteById(numeroCompteACrediter);
 
 		double soldeCompteADebiterAvant = compteADebiter.getSolde();
 		double soldeCompteACrediterAvant = compteACrediter.getSolde();
 
-		// try {
-		// conseillerService.effectuerVirement(compteADebiter, compteACrediter,
-		// montant);
-		// } catch (ConseillerServiceException e) {
-		// request.setAttribute("erreur", e.getMessage());
-		// request.getRequestDispatcher("/WEB-INF/erreur.jsp").include(request,
-		// response);
-		// return;
-		// }
+		try {
+			service.effectuerVirement(compteADebiter, compteACrediter, montant);
+		} catch (ConseillerServiceException e) {
+			request.setAttribute("erreur", e.getMessage());
+			request.getRequestDispatcher("/WEB-INF/erreur.jsp").include(request, response);
+			return;
+		}
 
 		double soldeCompteADebiterApres = compteADebiter.getSolde();
 		double soldeCompteACrediterApres = compteACrediter.getSolde();
