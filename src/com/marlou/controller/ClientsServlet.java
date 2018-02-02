@@ -12,13 +12,9 @@ import javax.servlet.http.HttpServletResponse;
  * d’accueil de l’espace du conseiller.
  *
  * Chaque conseiller peut visualiser l'ensemble de ses clients. Pour chaque
- * client, l'interface lui permet de mettre à jour les informations du client
- * ({@link eu.fstk.ProxiBanqueSI.presentation.EditionServlet}), lister les
- * comptes d'un client
- * ({@link eu.fstk.ProxiBanqueSI.presentation.ComptesServlet}) ainsi que
- * d'effectuer un virement
- * ({@link eu.fstk.ProxiBanqueSI.presentation.VirementServlet}).
- *
+ * client, l'interface lui permet de mettre à jour les informations du client,
+ * lister les comptes d'un client ainsi que d'effectuer un virement
+ * 
  * 
  * @author Étienne, Sophia, Maria, Louis
  */
