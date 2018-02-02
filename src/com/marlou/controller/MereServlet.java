@@ -18,9 +18,9 @@ import com.huios.service.IServiceLocal;
 public class MereServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	  @EJB
+	@EJB
 	  protected IServiceLocal service;
-       
+   
     /**
      * @see HttpServlet#HttpServlet()
      */

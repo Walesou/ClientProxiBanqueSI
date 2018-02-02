@@ -2,9 +2,13 @@ package com.marlou.controller;
 
 import java.io.IOException;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.huios.service.IServiceLocal;
 
 /**
  * Page gérant l’affichage de la liste des clients du conseiller. C’est la
@@ -21,10 +25,11 @@ import javax.servlet.http.HttpServletResponse;
  * 
  * @author Étienne, Sophia et Maria
  */
-
+@WebServlet("/ClientsServlet")
 public class ClientsServlet extends MereServlet {
 
 	private static final long serialVersionUID = -1697049406597216786L;
+	
 
 	public ClientsServlet() {
 		// TODO Auto-generated constructor stub
@@ -35,8 +40,8 @@ public class ClientsServlet extends MereServlet {
 			throws ServletException, IOException {
 		// // TODO Auto-generated method stub
 
-		request.setAttribute("liste", service.getTousLesClients());
-		request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request, response);
+//		request.setAttribute("liste", service.getTousLesClients());
+//		request.getRequestDispatcher("/WEB-INF/mes_clients.jsp").forward(request, response);
 
 	}
 
