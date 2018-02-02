@@ -32,7 +32,7 @@
               <a class="nav-link" href="support.jsp">Support</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gestion/">Mon espace</a>
+              <a class="nav-link" href="connexion.jsp">Mon espace</a>
             </li>
           </ul>
         </nav>
@@ -45,7 +45,7 @@
         <div class="jumbotron">
           <h1 class="display-5">Mon espace conseiller</h1>
           <p class="lead">Accédez de manière sécurisée (ou pas) à votre espace de gestion clients</p>
-          <p><a class="btn btn-lg btn-success" href="gestion/" role="button">Connexion</a></p>
+          <p><a class="btn btn-lg btn-success" href="connexion.jsp" role="button">Connexion</a></p>
         </div>
 
         <div class="marketing">
