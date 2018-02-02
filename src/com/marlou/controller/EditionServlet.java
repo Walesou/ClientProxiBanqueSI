@@ -11,15 +11,15 @@ import com.huios.dao.ClientOADException;
 import com.huios.domaine.Client;
 
 /**
- * Page chargé des envois pour la mise à jour des informations des clients.
+ * Page chargée des envois pour la mise à jour des informations des clients.
  *
  * Pour chaque client le conseiller peut modifier les informations suivantes :
  * nom, prénom, courriel et adresse.
  *
- * On a fait le choix de permettre au conseiller d’effectuer de modifier les
- * informations de tous les clients de la banque.
+ * On a fait le choix de permettre au conseiller de modifier les informations de
+ * tous les clients de la banque.
  *
- * @author Étienne, Sophia et Maria
+ * @author Étienne, Sophia, Maria, Louis
  */
 @WebServlet("/EditionServlet")
 public class EditionServlet extends MereServlet {
@@ -27,7 +27,7 @@ public class EditionServlet extends MereServlet {
 	private static final long serialVersionUID = -5266516954070088318L;
 
 	public EditionServlet() {
-
+		super();
 	}
 
 	@Override
@@ -36,9 +36,6 @@ public class EditionServlet extends MereServlet {
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 
-		/*
-		 * TODO : Décider si on permet la modification de plusieurs champs à la fois.
-		 */
 		int id = Integer.parseInt(request.getParameter("id"));
 		String modification = request.getParameter("modification");
 		String valeur = request.getParameter("valeur");

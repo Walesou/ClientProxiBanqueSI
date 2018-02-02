@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Traitement de la mise Ã  jour des informations sur un client.
+ * Traitement de la mise à jour des informations sur un client.
  *
- * @author Ã‰tienne, Sophia et Maria
+ * @author Étienne, Sophia, Maria, Louis
  */
 @WebServlet("/MajClient")
 public class MajClientServlet extends MereServlet {
@@ -23,17 +23,8 @@ public class MajClientServlet extends MereServlet {
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
 
-		// HttpSession session = request.getSession(true);
-		//
-		// List<Client> clients = (List<Client>) session.getAttribute("clients_modif");
-		//
-
-		// On récupère les clients du conseiller.
-		// request.setAttribute("mesClients",
-		// service.getClientsByConseillerAuthName(request.getUserPrincipal().getName()));
-		// On rÃ©cupÃ¨re tous les clients de la banque.
 		request.setAttribute("clients", service.getTousLesClients());
-		// On renvoie au formulaire dâ€™Ã©dition des clients.
+
 		request.getRequestDispatcher("/WEB-INF/form_modification_client.jsp").include(request, response);
 
 	}

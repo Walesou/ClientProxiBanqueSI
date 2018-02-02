@@ -13,7 +13,7 @@ import com.huios.service.ConseillerServiceException;
 /**
  * Traitement de l’action de virement.
  *
- * @author Étienne, Sophia et Maria
+ * @author Étienne, Sophia, Maria, Louis
  */
 @WebServlet("/MajVirement")
 public class MajVirementServlet extends MereServlet {

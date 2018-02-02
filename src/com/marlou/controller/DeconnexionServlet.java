@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Page gérant la déconnexion d’un utilisateur.
  *
- * @author Étienne, Sophia et Maria
+ * @author Étienne, Sophia, Maria, Louis
  */
 @WebServlet("/DeconnexionServlet")
 public class DeconnexionServlet extends HttpServlet {
@@ -33,7 +33,6 @@ public class DeconnexionServlet extends HttpServlet {
 		 * session.invalidate(); }
 		 */
 
-		// response.sendRedirect(request.getContextPath() + "index.jsp");
 		request.getRequestDispatcher("index.jsp").include(request, response);
 
 	}

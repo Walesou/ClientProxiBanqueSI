@@ -18,7 +18,7 @@ import com.huios.domaine.Client;
  * On a fait le choix de permettre au conseiller d’effectuer des virements pour
  * tous les comptes de la banque.
  *
- * @author Étienne, Sophia et Maria
+ * @author Étienne, Sophia, Maria, Louis
  */
 @WebServlet("/VirementServlet")
 public class VirementServlet extends MereServlet {
@@ -43,27 +43,6 @@ public class VirementServlet extends MereServlet {
 		request.setAttribute("clients", clients);
 
 		request.getRequestDispatcher("/WEB-INF/form_effectuer_virement.jsp").include(request, response);
-
-		/*
-		 * // On récupère tous les clients de la banque. List<Client> clients =
-		 * service.getTousLesClients();
-		 * 
-		 * 
-		 * for (Client client : clients) {
-		 * client.setComptes(service.getComptes(client.getIdentifiant())); }
-		 * 
-		 * request.setAttribute("clients", clients); // On récupère les clients du
-		 * conseiller. // Oui, c’est pas optimal ; mais le conseiller a au maximum dix
-		 * clients, // donc ça reste un choix valable. List<Client> mesClients =
-		 * service.getClientsByConseillerAuthName(request.getUserPrincipal().getName());
-		 * // Pour chaque client, on récupère ses comptes et on les ajoute à // l’objet.
-		 * // C’est fastidieux, mais c’est la joie de la persistance « à la // mano ».
-		 * for (Client client : mesClients) {
-		 * client.setComptes(service.getComptes(client.getIdentifiant())); }
-		 * request.setAttribute("mesClients", mesClients); // On affiche le formulaire.
-		 * request.getRequestDispatcher("/WEB-INF/form_effectuer_virement.jsp").include(
-		 * request, response);
-		 */
 
 	}
 

@@ -16,12 +16,16 @@ import javax.servlet.http.HttpServletResponse;
  * On a fait le choix de n’accéder facilement qu’à l’affichage des comptes des
  * clients du conseiller connecté.
  *
- * @author Étienne, Sophia et Maria
+ * @author Étienne, Sophia, Maria, Louis
  */
 @WebServlet("/ComptesServlet")
 public class ComptesServlet extends MereServlet {
 
 	private static final long serialVersionUID = -4042961988530486177L;
+
+	public ComptesServlet() {
+		super();
+	}
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
