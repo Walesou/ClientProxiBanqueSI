@@ -31,7 +31,7 @@ public class ComptesServlet extends MereServlet {
 
 		int idClient = Integer.parseInt(request.getParameter("idClient"));
 
-		request.setAttribute("listComptes", service.getComptes(idClient));
+		request.setAttribute("listComptes", service.getComptesByID(idClient));
 		request.getRequestDispatcher("/WEB-INF/comptes_client.jsp").forward(request, response);
 
 	}

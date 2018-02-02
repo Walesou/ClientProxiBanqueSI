@@ -95,10 +95,10 @@
                   <tr>
                     <td>${compte.identifiant}</td>
                     <td>${compte.solde} €</td>
-                    <c:if test="${compte.getClass().name == 'eu.fstk.ProxiBanqueSI.domaine.CompteCourant'}">
+                    <c:if test="${compte.getClass().name == 'com.huios.domaine.CompteCourant'}">
                       <td>Courant</td>
                     </c:if>
-                    <c:if test="${compte.getClass().name != 'eu.fstk.ProxiBanqueSI.domaine.CompteCourant'}">
+                    <c:if test="${compte.getClass().name != 'com.huios.domaine.CompteCourant'}">
                       <td>Épargne</td>
                     </c:if>
                   </tr>

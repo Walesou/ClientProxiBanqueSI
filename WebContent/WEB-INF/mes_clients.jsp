@@ -86,7 +86,7 @@
               </thead>
               <tbody>
               	<c:forEach var="client" items="${sessionScope.clients}" >
-                  <tr class='clickable-row' data-href='<c:url value="Comptes?idClient=${client.identifiant}" />' name="${client.identifiant}">
+                  <tr class='clickable-row' data-href='<c:url value="ComptesServlet?idClient=${client.identifiant}" />' >
                     <td>${client.identifiant}</td>
                     <td>${client.nom}</td>
                     <td>${client.prenom}</td>
