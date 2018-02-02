@@ -73,43 +73,6 @@
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Choix du compte client à débiter</label>
                   <select class="form-control" id="exampleFormControlSelect1" name="compteADebiter">
-                    <c:forEach var="client" items="${requestScope.mesClients}" >
-                      <c:forEach var="compte" items="${client.comptes}">
-                        <option value="${compte.identifiant}">${client.identifiant} — ${client.prenom} ${client.nom} — ${client.adresse} — ${client.courriel} — ${compte.identifiant}</option>
-                      </c:forEach>
-                    </c:forEach>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Choix du compte client à créditer</label>
-                  <select class="form-control" id="exampleFormControlSelect1" name="compteACrediter">
-                    <c:forEach var="client" items="${requestScope.clients}" >
-                      <c:forEach var="compte" items="${client.comptes}">
-                        <option value="${compte.identifiant}">${client.identifiant} — ${client.prenom} ${client.nom} — ${client.adresse} — ${client.courriel} — ${compte.identifiant}</option>
-                      </c:forEach>
-                    </c:forEach>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-md-10">
-                <label for="validationCustom03">Montant</label>
-                <input type="text" class="form-control" id="validationCustom03" name="montant" placeholder="Montant" required>
-              </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Effectuer le virement</button>
-          </form>
-
-          <h3>Virement entre n’importe quel compte de la banque</h3>
-          <form method="post" action="<c:url value='ExecutionVirement' />">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Choix du compte client à débiter</label>
-                  <select class="form-control" id="exampleFormControlSelect1" name="compteADebiter">
                     <c:forEach var="client" items="${requestScope.clients}" >
                       <c:forEach var="compte" items="${client.comptes}">
                         <option value="${compte.identifiant}">${client.identifiant} — ${client.prenom} ${client.nom} — ${client.adresse} — ${client.courriel} — ${compte.identifiant}</option>
